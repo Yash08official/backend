@@ -85,3 +85,7 @@ In our case
 ```
 npm run dev
 ```
+
+We can understand from a image below
+
+![Flow of Backend and Frontend and Database](https://github.com/Yash08official/backend/blob/aeb3562c8e8a0800a919bcd9e066a461b63a9ed1/assets/arch.png)
