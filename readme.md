@@ -43,3 +43,45 @@ then , your package.json will look like
 ```
 
 Now create a `.gitignore` file , it will help us to not push unwanted and secret files on github like node_modules , and .env files
+
+### Writing Code
+
+Now create a server.js (any name) file and past the code init
+
+```js
+const express = require("express");
+
+const port = 5000;
+
+const app = express();
+
+app.listen(port, () => {
+  console.log(`server running on http://localhost:${port}`);
+});
+```
+
+Now we need some scripts to run our development and production server
+there are two method , run every time `nodemon server.js` in terminal or define a script for it so you no need to run big command in terminal
+
+we can define scripts in `package.json` file
+
+```json
+  ...
+ "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  ...
+```
+
+we can run scripts like in terminal
+
+```
+npm run <script name>
+```
+
+In our case
+
+```
+npm run dev
+```
