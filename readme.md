@@ -91,3 +91,16 @@ We can understand from a image below
 ![Flow of Backend and Frontend and Database](https://github.com/Yash08official/backend/blob/aeb3562c8e8a0800a919bcd9e066a461b63a9ed1/assets/arch.png)
 
 fontend , backed and database is seprate from each other they dont know about other one like we can build a apis in nodejs , python or in java and frontend only need to know a endpoint to call like `/api/post` , as well we can use any database like postgres, mongodb or mysql and forntend can be build in any technology Html , React etc...
+
+### Create a route
+
+Now create a route , to handle a request form frontend , routes can be
+`/api/user` , `/api/post` etc...
+
+```js
+...
+app.get("/user", (req, res, next) => {
+  return res.json({ message: "Hello from /user route" });
+});
+...
+```
