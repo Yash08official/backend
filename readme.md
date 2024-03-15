@@ -104,3 +104,46 @@ app.get("/user", (req, res, next) => {
 });
 ...
 ```
+
+Routes can be used for CRUD Oprations and for every opration we have request type like GET , POST , PATCH and DELETE..
+
+GET is used when you just need to send data from serverto client/frontend , it not support any body (it means we send in insomenia/postman in json field), we cant send data from client to server in body , insted we use query and params
+
+example , I want a products of color red and size small so i will send a request to server like
+
+```js
+const response = await axios.get("/api/products?color=red&size=small");
+```
+
+In POST , if we want to send a data from client to server , it is best way to send a data secuerly like username , password or any confedential data/information. it supports body means we can send a data from client to server
+
+example , I want to register a user or login a user so i want to send a username , and password
+
+```js
+const response = await axios.post("/api/auth", {
+  username: "yash",
+  password: "secret",
+});
+```
+
+here `/api/auth` is a api endpoint you created on backend , i can be any thing
+
+Same for Patch , when ever we need to update a existing entity in database, we use patch , we can use post for update but its a best practice and preffered way to use patch when we perform any updations in database
+
+example , I want to update a name of a product
+
+```js
+const response = await axios.patch("/api/product/<productId>", {
+  name: "New updated name",
+});
+```
+
+we used params above in backend your endpoint must look like `/api/product/:id`
+
+And Now DELETE , same case as Patch when ever we want to delete something from database then we used DELETE , same we can used post for it but used delete insted its a best practice
+
+example , i want to delete a product from `products` collection
+
+```js
+const response = await axios.delete("/api/product/<productId>");
+```
